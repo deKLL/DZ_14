@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+void count(const int* arr, int size, int& plus, int& minus, int& zero) {
+    plus = 0;
+    minus = 0;
+    zero = 0;
+    
+    for (int i = 0; i < size; i++) {
+        if (arr[i] > 0) {
+            plus++;
+        } else if (arr[i] < 0) {
+            minus++;
+        } else {
+            zero++;
+        }
+    }
+}
+
+int main() {
+    int arr[] = {-1, 0, 2, -3, 0, 5};
+    int array = sizeof(arr) / sizeof(arr[0]);
+    
+    int plus = 0;
+    int minus = 0;
+    int zeros = 0;
+    
+    count(arr, array, plus, minus, zeros);
+    
+    cout << "Plus numbers: " << plus << endl;
+    cout << "Minus numbers: " << minus << endl;
+    cout << "Zero numbers: " << zeros << endl;
+    
+    return 0;
+}
